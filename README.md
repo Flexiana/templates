@@ -1,6 +1,6 @@
-# flexiana/xiana-deps-template
+# flexiana/templates
 
-New Xiana template using deps-new
+New templates using deps-new
 
 ## Usage
 
@@ -13,10 +13,12 @@ clojure -Ttools install io.github.seancorfield/deps-new '{:git/tag "v0.5.1"}' :a
 
 As originally generated, it will produce a new library project when run:
 
-    $ clojure -Sdeps '{:deps {flexiana/xiana-deps-template {:git/url "https://github.com/Flexiana/xiana-deps-template" :git/sha "732bfab7203388aa5ca84207a38e9278b4ad03df"}}}' -Tnew create :template flexiana/xiana-deps-template :name myusername/mycoollib
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "df1715c" :git/tag "v0.0.1"}}}' -Tnew create :template flexiana/<template-name> :name myusername/mycoolapp
+    
+Change `<template-name>` to the template you want.
 
-
-> Note: once the template has been published (to a public git repo), the invocation will be the same, except the `:local/root` dependency will be replaced by a git or Maven-like coordinate.
+### Available templates
+- electric
 
 Run this template project's tests (by default, this just validates your template's `template.edn`
 file -- that it is valid EDN and it satisfies the `deps-new` Spec for template files):
