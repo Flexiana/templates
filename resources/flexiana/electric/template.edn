@@ -6,7 +6,8 @@
  :transform
  [["build" "src"
    {"main.tmpl" "{{top/file}}/{{main/file}}.cljc"
-    "user.tmpl" "user.cljs"}]
+    "user.tmpl" "user.cljs"
+    "prod.tmpl" "prod.clj"}]
   ["resources" "resources/public"
    {"index.tmpl" "index.html"}]
   ["top" ""

@@ -4,7 +4,7 @@
 
 (e/defn TwoClocks []
   (e/client
-    (dom/h1 (dom/text "Two Clocks — Electric Clojure TEMPLATE"))
+  (dom/h1 (dom/text "{{main/file}}"))
 
     (let [c (e/client e/system-time-ms)
           s (e/server e/system-time-ms)]
