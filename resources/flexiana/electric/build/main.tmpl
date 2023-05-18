@@ -1,14 +1,15 @@
-(ns {{top/file}}.{{main/file}}
+(ns {{top/ns}}.{{main/ns}}
   (:require [hyperfiddle.electric :as e]
             [hyperfiddle.electric-dom2 :as dom]))
 
 (e/defn TwoClocks []
   (e/client
-    (dom/h1 (dom/text "Two Clocks — Electric Clojure TEMPLATE"))
-
+   (dom/div
+    (dom/h1 (dom/text "{{main/ns}}"))
+    (dom/p (dom/text "This is a demo showing client-side and server-side action. Check src/{{top/file}}/{{main/file}}.cljc and start adding your code there."))
     (let [c (e/client e/system-time-ms)
           s (e/server e/system-time-ms)]
 
       (dom/div (dom/text "client time: " c))
       (dom/div (dom/text "server time: " s))
-      (dom/div (dom/text "latency: " (- s c))))))
+      (dom/div (dom/text "latency: " (- s c)))))))
