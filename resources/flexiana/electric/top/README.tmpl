@@ -1,4 +1,4 @@
-# electric-starter-app
+# {{main/file}}
 
 ```
 $ clj -A:dev -X user/main
@@ -15,19 +15,32 @@ shadow-cljs - nREPL server started on port 9001
 
 # Deployment
 
-ClojureScript optimized build, Dockerfile, Uberjar, Github actions CD to fly.io
+ClojureScript optimized build, Uberjar
 
 ```
 clojure -X:build build-client          # optimized release build
 clojure -X:build uberjar               # contains demos and demo server, currently
+```
+
+## Build {{main/file}} as a docker image
+
+Note: git describe will fail until git is initialised and a commit is made.
+
+```
 HYPERFIDDLE_ELECTRIC_APP_VERSION=`git describe --tags --long --always --dirty`
-docker build --build-arg VERSION='"'$HYPERFIDDLE_ELECTRIC_APP_VERSION'"' -t electric-starter-app .
-docker run --rm -p 7070:8080 electric-starter-app
+docker build --build-arg VERSION='"'$HYPERFIDDLE_ELECTRIC_APP_VERSION'"' -t {{main/file}} .
+docker run --rm -p 7070:8080 {{main/file}}
+```
+
+## Github actions
+CD to fly.io (untested)
+
+```
 # flyctl launch ... ? create fly app, generate fly.toml, see dashboard
-# https://fly.io/apps/electric-starter-app
+# https://fly.io/apps/{{main/file}}
 
 NO_COLOR=1 flyctl deploy --build-arg VERSION='$HYPERFIDDLE_ELECTRIC_APP_VERSION'
-# https://electric-starter-app.fly.dev/
+# https://{{main/file}}.fly.dev/
 ```
 
 - `NO_COLOR=1` disables docker-cli fancy shell GUI, so that we see the full log (not paginated) in case of exception
