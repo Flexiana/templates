@@ -13,7 +13,8 @@ clojure -Ttools install io.github.seancorfield/deps-new '{:git/tag "v0.5.1"}' :a
 
 As originally generated, it will produce a new library project when run:
 
-    $ clojure -Sdeps '{:deps {flexiana/xiana-deps-template {:git/url "https://github.com/Flexiana/xiana-deps-template" :git/sha "732bfab7203388aa5ca84207a38e9278b4ad03df"}}}' -Tnew create :template flexiana/xiana-deps-template :name myusername/mycoollib
+    $ clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "c5780e911809b1f8ad6bc8b8572304e17c713d65"}}}' -Tnew create :template flexiana/xiana :name coolapp
+
 
 
 > Note: once the template has been published (to a public git repo), the invocation will be the same, except the `:local/root` dependency will be replaced by a git or Maven-like coordinate.
