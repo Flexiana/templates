@@ -4,12 +4,14 @@
  ;; this does not transform the EDN but does print a message:
  :template-fn flexiana.xiana-deps/template-fn
  :transform
- [["build/top" ""
-   {"shadow-cljs.tmpl"    "shadow-cljs.edn"
-    "docker-compose.tmpl" "docker-compose.yml"}]
-
-  ["build" ""
-   {"deps.tmpl" "deps.edn"}
+ [["build" ""
+   {"deps.tmpl"           "deps.edn"
+    "shadow-cljs.tmpl"    "shadow-cljs.edn"
+    "docker-compose.tmpl" "docker-compose.yml"
+    "gitignore"           ".gitignore"
+    "hgignore"            ".hgignore"
+    "kvs.tmpl"            "kvs"
+    "build.tmpl"          "build.clj"}
    :only]
 
   ["build/config/dev" "config/dev"
@@ -25,8 +27,8 @@
    {"user.tmpl" "user.clj"}]
 
   ["build/test" "test"
-   {"app_name_test.tmpl"    "{{main/ns}}_test.clj"
-    "app_name_fixture.tmpl" "{{main/ns}}_fixture.clj"}]
+   {"app_name_test.tmpl"    "{{main/file}}_test.clj"
+    "app_name_fixture.tmpl" "{{main/file}}_fixture.clj"}]
 
 
   ["build/src/backend/app_name" "src/backend/{{main/file}}"
