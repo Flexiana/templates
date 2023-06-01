@@ -1,5 +1,5 @@
 {:xiana/postgresql      {:port     5433
-                         :dbname   "{{main/file}}"
+                         :dbname   "{{db-name}}"
                          :host     "localhost"
                          :dbtype   "postgresql"
                          :user     "postgres"
@@ -23,6 +23,6 @@
                                            :iterations 100000}}
  :logging/timbre-config {:min-level :debug}
  :logging/rolling       {:enabled?  true
-                         :path      "log/{{main/file}}.log"
+                         :path      "log/{{db-name}}.log"
                          :roll-freq :daily                  ; accepts :daily :weekly :monthly
                          :min-level :debug}}
