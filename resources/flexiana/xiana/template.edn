@@ -10,7 +10,6 @@
     "docker-compose.tmpl" "docker-compose.yml"
     "gitignore"           ".gitignore"
     "hgignore"            ".hgignore"
-    "kvs.tmpl"            "kvs"
     "build.tmpl"          "build.clj"}
    :only]
 
