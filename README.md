@@ -13,7 +13,7 @@ clojure -Ttools install io.github.seancorfield/deps-new '{:git/tag "v0.5.1"}' :a
 
 As originally generated, it will produce a new library project when run:
 
-    $ clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "e40ae1fdf45a345e6abcb8405d10e89ec8e7b9e0"}}}' -Tnew create :template flexiana/xiana :name coolapp
+    $ clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "4e766cd14f13f2edf39e196a5719a11c002ce6e4"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
 
 
