@@ -10,7 +10,8 @@
     "docker-compose.tmpl" "docker-compose.yml"
     "gitignore"           ".gitignore"
     "hgignore"            ".hgignore"
-    "build.tmpl"          "build.clj"}
+    "build.tmpl"          "build.clj"
+    "package.tmpl"        "package.json"}
    :only]
 
   ["build/config/dev" "config/dev"
