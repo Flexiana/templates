@@ -1,4 +1,5 @@
 # {{main/ns}}
+
 FIXME: description
 
 ## Usage
@@ -18,7 +19,7 @@ psql -U postgres -p 5433 -h localhost
 ### Prepare node-dependencies
 
 ```shell
-lein shadow npm-deps
+npm install
 ```
 
 ### Start development
@@ -34,7 +35,7 @@ It will start up the shadow watch and the backend. It can be used to restart the
 ### Build frontend and run the backend
 
 ```shell
-lein release && lein run
+TODO: shadow release + run backend
 ```
 
 ### Try {{main/ns}}

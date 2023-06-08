@@ -1,5 +1,7 @@
 (ns flexiana.xiana-deps
-  (:require [clojure.pprint :as pp]))
+  (:require
+   [clojure.pprint :as pp]
+   [clojure.string :as str]))
 
 (defn data-fn
   "Example data-fn handler.
@@ -7,8 +9,10 @@
   Result is merged onto existing options data."
   [data]
   ;; returning nil means no changes to options data
-  (println "data-fn returning nil")
-  nil)
+  (pp/pprint "data-fn returning")
+
+  (let [artifact (:artifact/id data)]
+    (assoc data :db-name (last (str/split artifact #"\.")))))
 
 (defn template-fn
   "Example template-fn handler.
@@ -18,7 +22,6 @@
   
   ;; must return the whole EDN hash map
   (pp/pprint data)
-
   (pp/pprint edn)
 
   (if (:electric data)
