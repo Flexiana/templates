@@ -8,7 +8,7 @@
 
  :aliases
  {:run-m {:main-opts ["-m" "{{main/ns}}.core"]}
-  :run-x {:ns-default {{main}} .core
+  :run-x {:ns-default {{main}}.core
           :exec-fn    greet
           :exec-args  {:name "Clojure"}}
   :build {:deps       {io.github.clojure/tools.build
