@@ -13,15 +13,17 @@ As originally generated, it will produce a new library project when you run one 
 
 	clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "<git-sha>"}}}' -Tnew create :template <template-name> :name <app-name>
 
+<git-sha> can be the sha from the most recent commit to the main branch.
+
 ## Available templates
 
 ### Xiana Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "37b106f29913a31d899577a46904da294cdeb479"}}}' -Tnew create :template flexiana/xiana :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "a208f1a13e6fd3d75d6ace18631c7b9ff2ff79ea"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
 ### Electric Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "37b106f29913a31d899577a46904da294cdeb479"}}}' -Tnew create :template flexiana/electric :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "a208f1a13e6fd3d75d6ace18631c7b9ff2ff79ea"}}}' -Tnew create :template flexiana/electric :name coolapp
 
 > Note: once the template has been published (to a public git repo), the invocation will be the same, except the `:local/root` dependency will be replaced by a git or Maven-like coordinate.
 
