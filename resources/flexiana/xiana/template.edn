@@ -14,9 +14,6 @@
     "package.tmpl"        "package.json"}
    :only]
 
-  ["build/config/dev" "config/dev"
-   {"config.tmpl" "config.edn"}]
-
   ["build/config/test" "config/test"
    {"config.tmpl" "config.edn"}]
 
