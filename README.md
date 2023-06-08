@@ -13,9 +13,14 @@ clojure -Ttools install io.github.seancorfield/deps-new '{:git/tag "v0.5.1"}' :a
 
 As originally generated, it will produce a new library project when run:
 
+<<<<<<< HEAD
     clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "df1715c" :git/tag "v0.0.1"}}}' -Tnew create :template flexiana/<template-name> :name myusername/mycoolapp
     
 Change `<template-name>` to the template you want.
+=======
+    $ clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "fcfc5a5fb64709fea35db765df0d461b83f3d256"}}}' -Tnew create :template flexiana/xiana :name coolapp
+
+>>>>>>> framework
 
 ### Available templates
 - electric
