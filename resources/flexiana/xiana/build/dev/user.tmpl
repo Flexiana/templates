@@ -17,6 +17,7 @@
 (defn- stop-dev-system
   []
   (when-let [webserver (:webserver @dev-sys)]
+    (shadow.server/stop!)
     (.stop (:server webserver))
     (refresh-all)
     (reset! dev-sys (closeable-map {}))))
