@@ -62,7 +62,7 @@ Hint: You can copy `config/dev/config.edn` to `config/prod/config.edn` and tune 
 #### Run backend
 
 ```shell
-clj X:prod
+clj -X:prod
 ```
 
 #### Try {{main/ns}}
