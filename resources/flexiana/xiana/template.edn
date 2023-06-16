@@ -5,36 +5,17 @@
  :template-fn flexiana.xiana-deps/template-fn
  :transform
  [["build" ""
-   {"deps.tmpl"           "deps.edn"
-    "shadow-cljs.tmpl"    "shadow-cljs.edn"
-    "docker-compose.tmpl" "docker-compose.yml"
-    "gitignore"           ".gitignore"
-    "hgignore"            ".hgignore"
-    "build.tmpl"          "build.clj"
-    "package.tmpl"        "package.json"}
+   {"gitignore"           ".gitignore"
+    "hgignore"            ".hgignore"}
    :only]
-
-  ["build/config/dev" "config/dev"
-   {"config.tmpl" "config.edn"}]
-
-  ["build/config/test" "config/test"
-   {"config.tmpl" "config.edn"}]
-
-  ["build/resources/public" "resources/public"
-   {"index.tmpl" "index.html"}]
-
-  ["build/dev" "dev"
-   {"user.tmpl" "user.clj"}]
 
   ["build/test" "test"
    {"app_name_test.tmpl"    "{{main/file}}_test.clj"
     "app_name_fixture.tmpl" "{{main/file}}_fixture.clj"}]
 
-
   ["build/src/backend/app_name" "src/backend/{{main/file}}"
    {"core.tmpl" "core.clj"}
    :only]
-
 
   ["build/src/backend/app_name/controllers" "src/backend/{{main/file}}/controllers"
    {"re_frame.tmpl" "re_frame.clj"

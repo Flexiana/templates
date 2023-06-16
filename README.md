@@ -13,17 +13,17 @@ As originally generated, it will produce a new library project when you run one 
 
 	clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "<git-sha>"}}}' -Tnew create :template <template-name> :name <app-name>
 
+<git-sha> can be the sha from the most recent commit to the main branch.
+
 ## Available templates
 
 ### Xiana Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "37b106f29913a31d899577a46904da294cdeb479"}}}' -Tnew create :template flexiana/xiana :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "27a97ef3a883ec32cbb77f5fab4be67f50895c0f"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
 ### Electric Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "37b106f29913a31d899577a46904da294cdeb479"}}}' -Tnew create :template flexiana/electric :name coolapp
-
-> Note: once the template has been published (to a public git repo), the invocation will be the same, except the `:local/root` dependency will be replaced by a git or Maven-like coordinate.
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "27a97ef3a883ec32cbb77f5fab4be67f50895c0f"}}}' -Tnew create :template flexiana/electric :name coolapp
 
 Run this template project's tests (by default, this just validates your template's `template.edn`
 file -- that it is valid EDN and it satisfies the `deps-new` Spec for template files):
