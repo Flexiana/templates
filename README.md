@@ -13,17 +13,17 @@ As originally generated, it will produce a new library project when you run one 
 
 	clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "<git-sha>"}}}' -Tnew create :template <template-name> :name <app-name>
 
-<git-sha> can be the sha from the most recent commit to the main branch.
+\<git-sha> can be the sha from the most recent commit to the main branch.
 
 ## Available templates
 
 ### Xiana Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "27a97ef3a883ec32cbb77f5fab4be67f50895c0f"}}}' -Tnew create :template flexiana/xiana :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "b63986497f99a82d76d34e32571b755651be1975"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
 ### Electric Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "27a97ef3a883ec32cbb77f5fab4be67f50895c0f"}}}' -Tnew create :template flexiana/electric :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "b63986497f99a82d76d34e32571b755651be1975"}}}' -Tnew create :template flexiana/electric :name coolapp
 
 Run this template project's tests (by default, this just validates your template's `template.edn`
 file -- that it is valid EDN and it satisfies the `deps-new` Spec for template files):
