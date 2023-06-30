@@ -16,18 +16,16 @@
 
 (defn- stop-dev-system
   []
-  (when-let [webserver (:webserver @dev-sys)]
-    (shadow.server/stop!)
-    (.stop (:server webserver))
-    (refresh-all)
-    (reset! dev-sys (closeable-map {}))))
+  (.close @dev-sys)
+  (refresh-all)
+  (reset! dev-sys (closeable-map {})))
 
 (defn start-dev-system
   []
   (stop-dev-system)
   (shadow.server/start!)
   (shadow.api/watch :app)
-  (reset! dev-sys (->system dev-app-config)))
+  (reset! dev-sys (closeable-map (->system dev-app-config))))
 
 (defn -main
   [& args]
