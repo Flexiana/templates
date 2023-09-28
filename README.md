@@ -19,11 +19,11 @@ As originally generated, it will produce a new library project when you run one 
 
 ### Xiana Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "b63986497f99a82d76d34e32571b755651be1975"}}}' -Tnew create :template flexiana/xiana :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "588236a387e8184c2cdd2c562dfac528930e47d0"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
 ### Electric Template
 
-    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "b63986497f99a82d76d34e32571b755651be1975"}}}' -Tnew create :template flexiana/electric :name coolapp
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "588236a387e8184c2cdd2c562dfac528930e47d0"}}}' -Tnew create :template flexiana/electric :name coolapp
 
 Run this template project's tests (by default, this just validates your template's `template.edn`
 file -- that it is valid EDN and it satisfies the `deps-new` Spec for template files):
