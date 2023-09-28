@@ -22,7 +22,7 @@
    ^:no-doc ["/re-frame" {:action #'re-frame/handle-index
                           :swagger {:produces ["text/html"]}}]
    ^:no-doc ["/assets/*" (ring/create-resource-handler {:path "/"})]
-   ^:no-doc ["/endpoints" {:action #'swc/swagger-controller}]
+   ^:no-doc ["/swagger-ui" {:action #'swc/swagger-controller}]
    ["/api" {:action #'index/handle-index}]])
 
 
