@@ -4,12 +4,7 @@
  ;; this does not transform the EDN but does print a message:
  :template-fn flexiana.xiana-deps/template-fn
  :transform
- [["build" ""
-   {"gitignore"           ".gitignore"
-    "hgignore"            ".hgignore"}
-   :only]
-
-  ["build/test" "test"
+ [["build/test" "test"
    {"app_name_test.tmpl"    "{{main/file}}_test.clj"
     "app_name_fixture.tmpl" "{{main/file}}_fixture.clj"}]
 
