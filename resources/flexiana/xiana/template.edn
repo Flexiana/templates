@@ -14,7 +14,8 @@
 
   ["build/src/backend/app_name/controllers" "src/backend/{{main/file}}/controllers"
    {"re_frame.tmpl" "re_frame.clj"
-    "index.tmpl"    "index.clj"}]
+    "index.tmpl"    "index.clj"
+    "swagger.tmpl" "swagger.clj"}]
 
   ["build/src/backend/app_name/controller_behaviors" "src/backend/{{main/file}}/controller_behaviors"
    {".gitkeep" ".gitkeep"}]

@@ -14,6 +14,21 @@
                          :host   "localhost"
                          :join?  false
                          :async? true}
+ :xiana/swagger         {:uri-path "/swagger/swagger.json"
+                         :path :swagger.json
+
+                         :data {:coercion (reitit.coercion.malli/create
+                                           {:error-keys #{:coercion :in :schema :value :errors :humanized}
+                                            :compile malli.util/closed-schema
+                                            :strip-extra-keys true
+                                            :default-values true
+                                            :options nil})
+                                :middleware [reitit.swagger/swagger-feature]}}
+
+ :xiana/swagger-ui      {:uri-path "/swagger/swagger-ui"}
+
+
+
  :xiana/auth            {:hash-algorithm  :bcrypt           ;; Available values: :bcrypt, :scrypt, and :pbkdf2
                          :bcrypt-settings {:work-factor 11}
                          :scrypt-settings {:cpu-cost        32768 ;; Must be a power of 2

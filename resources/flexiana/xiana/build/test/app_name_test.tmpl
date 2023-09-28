@@ -2,12 +2,14 @@
   (:require
     [clj-http.client :as http]
     [clojure.test :refer [deftest is use-fixtures]]
-    [{{main/ns}}.core]
-    [{{main/ns}}-fixture :refer [std-system-fixture]]))
+    [{{main/ns}}-fixture :refer [std-system-fixture]]
+    [{{main/ns}}.core]))
+
 
 (def config {})
 
 (use-fixtures :once (partial std-system-fixture config))
+
 
 (deftest index-test
   (is (= {:body   "Index page"

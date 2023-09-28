@@ -1,8 +1,10 @@
 (ns {{main/ns}}.controllers.index
-  (:require [ring.util.response :as ring]))
+  (:require
+    [ring.util.response :as ring]))
+
 
 (defn handle-index
   [state]
   (assoc state
-    :response
-    (ring/response "Index page")))
+         :response
+         (ring/response "Index page")))
