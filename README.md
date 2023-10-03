@@ -13,7 +13,9 @@ As originally generated, it will produce a new library project when you run one 
 
 	clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "<git-sha>"}}}' -Tnew create :template <template-name> :name <app-name>
 
-\<git-sha> can be the sha from the most recent commit to the main branch.
+\<git-sha> can be the sha from the most recent commit to the main branch. Scroll up and find the SHA here.
+
+![Screenshot of SHA location](images/SHA.jpg)
 
 ## Available templates
 
