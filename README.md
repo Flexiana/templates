@@ -21,6 +21,13 @@ As originally generated, it will produce a new library project when you run one 
 
     clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "588236a387e8184c2cdd2c562dfac528930e47d0"}}}' -Tnew create :template flexiana/xiana :name coolapp
 
+### Xiana-unstable Template
+
+In order to use this template you need to clone [xiana-framework](https://github.com/Flexiana/framework) into the same directory that contains your new project directory. You may need to checkout a particular branch there in order to use new features that we are working on.
+
+    clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "588236a387e8184c2cdd2c562dfac528930e47d0"}}}' -Tnew create :template flexiana/xiana_unstable :name coolapp
+
+
 ### Electric Template
 
     clojure -Sdeps '{:deps {io.github.flexiana/templates {:git/sha "588236a387e8184c2cdd2c562dfac528930e47d0"}}}' -Tnew create :template flexiana/electric :name coolapp
