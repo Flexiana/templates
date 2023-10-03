@@ -15,6 +15,8 @@ As originally generated, it will produce a new library project when you run one 
 
 \<git-sha> can be the sha from the most recent commit to the main branch.
 
+![Screenshot of SHA location](images/SHA.jpg)
+
 ## Available templates
 
 ### Xiana Template
