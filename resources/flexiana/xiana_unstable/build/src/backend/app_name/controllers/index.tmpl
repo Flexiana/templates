@@ -8,3 +8,10 @@
   (assoc state
          :response
          (ring/response "Index page")))
+
+(defn handle-post
+  [state]
+  (let [data (get-in state [:request :body-params])]
+    (assoc state
+           :response
+           (ring/response data))))

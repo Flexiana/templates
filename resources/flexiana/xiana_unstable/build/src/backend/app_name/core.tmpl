@@ -17,20 +17,22 @@
 
 
 (def routes
-  [["/" {:action #'index/handle-index
-         :swagger {:produces ["text/html"]}}]
+  [["/" {:get {:action #'index/handle-index
+               :swagger {:produces ["text/html"]}}}]
    ^:no-doc ["/re-frame" {:action #'re-frame/handle-index
                           :swagger {:produces ["text/html"]}}]
    ^:no-doc ["/assets/*" (ring/create-resource-handler {:path "/"})]
-   ^:no-doc ["/swagger-ui" {:action #'swc/swagger-controller}]
-   ["/api" {:action #'index/handle-index}]])
+   ["/api" {:post {:action #'index/handle-post
+                   :parameters {:body {:first-name string?
+                                       :last-name string?
+                                       :age int?}}}}]])
 
 
 (defn ->system
   [app-cfg]
   (-> (config/config app-cfg)
       (rename-key :framework.app/auth :auth)
-      xsw/->swagger-data
+      xsw/add-swagger-endpoints
       routes/reset
       rbac/init
       session/init-backend
