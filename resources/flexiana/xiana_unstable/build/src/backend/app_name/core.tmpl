@@ -15,7 +15,6 @@
     [reitit.ring :as ring]
     [xiana.commons :refer [rename-key]]))
 
-
 (def routes
   [["/" {:get {:action #'index/handle-index
                :swagger {:produces ["text/html"]}}}]
@@ -26,7 +25,6 @@
                    :parameters {:body {:first-name string?
                                        :last-name string?
                                        :age int?}}}}]])
-
 
 (defn ->system
   [app-cfg]

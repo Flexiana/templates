@@ -2,7 +2,6 @@
   (:require
     [ring.util.response :as ring]))
 
-
 (defn handle-index
   [state]
   (assoc state
@@ -15,3 +14,4 @@
     (assoc state
            :response
            (ring/response data))))
+
