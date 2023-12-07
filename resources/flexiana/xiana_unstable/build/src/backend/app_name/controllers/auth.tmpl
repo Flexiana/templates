@@ -1,0 +1,11 @@
+(ns {{main/ns}}.controllers.auth
+  (:require
+   [ring.util.response :refer [response]]))
+
+;;; TODO
+;;; Authenticate fn is just a placeholder you need to implement the logic to handle the login data sent from the login page
+
+(defn authenticate
+  [state]
+  (let [req-form-params (get-in state [:request :form-params])]
+    (assoc state :response (response (str req-form-params)))))
