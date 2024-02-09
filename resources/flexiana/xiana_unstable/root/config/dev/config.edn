@@ -12,8 +12,7 @@
                          :session-table-name :sessions}
  :xiana/web-server      {:port   3000
                          :host   "localhost"
-                         :join?  false
-                         :async? true}
+                         :join?  false}
  :xiana/swagger         {:uri-path "/swagger/swagger.json"
                          :path :swagger.json
 
