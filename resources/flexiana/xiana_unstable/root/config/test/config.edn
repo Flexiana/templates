@@ -13,8 +13,7 @@
                          :session-table-name :sessions}
  :xiana/web-server      {:port   3333
                          :host   "localhost"
-                         :join?  false
-                         :async? true}
+                         :join?  false}
  :xiana/auth            {:hash-algorithm  :bcrypt           ;; Available values: :bcrypt, :scrypt, and :pbkdf2
                          :bcrypt-settings {:work-factor 11}
                          :scrypt-settings {:cpu-cost        32768 ;; Must be a power of 2
