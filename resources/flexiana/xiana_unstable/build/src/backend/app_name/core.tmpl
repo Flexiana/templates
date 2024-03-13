@@ -9,6 +9,7 @@
     [xiana.config :as config]
     [xiana.db :as db]
     [xiana.interceptor :as interceptors]
+    [xiana.logging :as xiana-logging]
     [xiana.rbac :as rbac]
     [xiana.route :as routes]
     [xiana.session :as session]
@@ -38,6 +39,7 @@
       routes/reset
       rbac/init
       session/init-backend
+      xiana-logging/set-level
       db/connect
       db/migrate!
       ws/start))
