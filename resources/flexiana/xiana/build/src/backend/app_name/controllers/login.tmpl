@@ -1,0 +1,39 @@
+(ns {{main/ns}}.controllers.login
+  (:require
+   [ring.util.response :refer [response]]
+   [hiccup.page :as hp]))
+
+(defn page
+  []
+  (hp/html5
+      [:body {:style {:height "400px"}}
+       [:div {:style {:height "100%"
+                      :display "flex"
+                      :align-items "center"
+                      :justify-content "center"
+                      :flex-direction "column"}}
+	[:h1 {:style {:margin-bottom "80px"}}
+         (str "{{main/ns}}")]
+        [:form {:action "/auth"
+                :method "post"}
+         [:div {:style {:display "flex"
+                        :flex-direction "column"}}
+          [:label "Username"]
+          [:input {:type "text"
+                   :id "username"
+                   :name "username"
+                   :placeholder "Username"}]]
+
+         [:div {:style {:display "flex"
+                        :flex-direction "column"}}
+          [:label "Password"]
+          [:input {:type "password"
+                   :id "password"
+                   :name "password"
+                   :placeholder "Password"}]]
+         [:input {:type "submit"
+                  :value (str "Login")}]]]]))
+
+(defn login-page
+  [state]
+  (assoc state :response (response (page))))

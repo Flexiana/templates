@@ -3,31 +3,47 @@
   (:require
     [{{main/ns}}.controllers.index :as index]
     [{{main/ns}}.controllers.re-frame :as re-frame]
+    [{{main/ns}}.controllers.swagger :as swc]
+    [{{main/ns}}.controllers.auth :refer [authenticate]]
+    [{{main/ns}}.controllers.login :refer [login-page]]
     [xiana.config :as config]
     [xiana.db :as db]
     [xiana.interceptor :as interceptors]
+    [xiana.logging :as xiana-logging]
     [xiana.rbac :as rbac]
     [xiana.route :as routes]
     [xiana.session :as session]
     [xiana.webserver :as ws]
+    [xiana.swagger :as xsw]
     [reitit.ring :as ring]
     [xiana.commons :refer [rename-key]]))
 
 (def routes
-  [["/" {:action #'index/handle-index}]
-   ["/re-frame" {:action #'re-frame/handle-index}]
-   ["/assets/*" (ring/create-resource-handler {:path "/"})]])
+  [["/" {:get {:action #'index/handle-index
+               :swagger {:produces ["text/html"]}}}]
+   ^:no-doc ["/re-frame" {:action #'re-frame/handle-index
+                          :swagger {:produces ["text/html"]}}]
+   ^:no-doc ["/assets/*" (ring/create-resource-handler {:path "/"})]
+   ["/login"          {:get {:action #'login-page}}]
+   ["/auth"           {:post {:action #'authenticate}}]
+   ["/api" {:post {:action #'index/handle-post
+                   :parameters {:body {:first-name string?
+                                       :last-name string?
+                                       :age int?}}}}]])
 
 (defn ->system
   [app-cfg]
   (-> (config/config app-cfg)
       (rename-key :framework.app/auth :auth)
+      xsw/add-swagger-endpoints
       routes/reset
       rbac/init
       session/init-backend
+      xiana-logging/set-level
       db/connect
       db/migrate!
       ws/start))
+
 
 (def app-cfg
   {:routes routes
@@ -39,6 +55,7 @@
                              interceptors/side-effect
                              db/db-access
                              rbac/interceptor]})
+
 
 (defn -main
   [& _args]

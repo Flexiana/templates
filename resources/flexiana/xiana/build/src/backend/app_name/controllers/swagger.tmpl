@@ -1,0 +1,20 @@
+(ns {{main/ns}}.controllers.swagger
+  (:require
+    [ring.util.response :as ring]
+    [xiana.swagger :as swagger]))
+
+
+(defn swagger-controller
+  "Swagger-UI html page"
+  [config]
+  (assoc config
+         :response
+         (ring/response (swagger/->default-internal-swagger-ui-html config))))
+
+
+(defn endpoints
+  [config]
+  (assoc config
+         :response
+         (ring/response (str "@ endpoints"))))
+
