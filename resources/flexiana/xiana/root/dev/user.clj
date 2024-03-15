@@ -9,10 +9,14 @@
     [shadow.cljs.devtools.server :as shadow.server]
     [state :refer [dev-sys]]))
 
+
 (alter-var-root #'*tx-agent-levels* conj :debug :trace)
 
-(def dev-app-config
+
+(defn dev-app-config
+  []
   app-cfg)
+
 
 (defn- stop-dev-system
   []
@@ -20,18 +24,21 @@
   (refresh-all)
   (reset! dev-sys (closeable-map {})))
 
+
 (defn start-dev-system
   []
   (stop-dev-system)
   (shadow.server/start!)
   (shadow.api/watch :app)
-  (reset! dev-sys (closeable-map (->system dev-app-config))))
+  (reset! dev-sys (closeable-map (->system (dev-app-config)))))
+
 
 (defn -main
   [& args]
   (when args
     (println (:name args)))
   (start-dev-system))
+
 
 (comment
   (start-dev-system))

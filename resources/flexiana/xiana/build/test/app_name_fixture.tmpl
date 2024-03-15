@@ -27,6 +27,7 @@
               :message       "accept connections"} (:container container))
     (assoc config :xiana/postgresql pg-config)))
 
+
 (defn std-system-fixture
   [config f]
   (with-open [_ (->> (config/config config)

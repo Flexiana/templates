@@ -14,6 +14,8 @@
 
   ["build/src/backend/app_name/controllers" "src/backend/{{main/file}}/controllers"
    {"re_frame.tmpl" "re_frame.clj"
+    "login.tmpl" "login.clj"
+    "auth.tmpl" "auth.clj"
     "index.tmpl"    "index.clj"}]
 
   ["build/src/backend/app_name/controller_behaviors" "src/backend/{{main/file}}/controller_behaviors"
